@@ -38,7 +38,7 @@ void get_price(int &price) {
 }
 
 // Function to ask payed from user and change the global variables.
-int get_payment(int &payed, int price) {
+void get_payment(int &payed, int price) {
     while (true) {
         cout << "How much did you pay?: ";
 
@@ -47,12 +47,12 @@ int get_payment(int &payed, int price) {
             int status = payed - price;
             if (status == 0 ) {
                 cerr << "You have broken even, there is no change, there is no spoon, there is only darkness.\n";
-                return 0;
+                return;
             } else if (status < 0) {
                 cerr <<  "You are trying to pay less than the price, you shall not pass!\n";
                 continue;
             } else {
-                return 1;
+                return;
             }
         }
         // Clear error state if payed wasnt set correctly
@@ -84,17 +84,15 @@ int main() {
     get_price(price);
 
     // Get payment from user and validate status. 
-    int status = get_payment(payed,price);
+    get_payment(payed,price);
 
-    // If status says change is available; calculate and print the change-table.
-    if (status == 1) {
-        // Array to send to calc_change
-        int change_table[6][2] = {0};
-                
-        // Send userdata and array to calculate-function
-        calc_change(price, payed,change_table);
+    // Array to send to calc_change
+    int change_table[6][2] = {0};
+            
+    // Send userdata and array to calculate-function
+    calc_change(price, payed,change_table);
 
-        // Print results
-        print_change(price, payed, change_table);
-    }
+    // Print results
+    print_change(price, payed, change_table);
+
 }

@@ -1,0 +1,56 @@
+# Ignorera kompilatoroutput
+*.o
+*.obj
+*.lo
+*.la
+*.al
+*.exe
+*.out
+*.app
+*.i*
+*.d*
+*.lib
+*.a
+*.so
+*.dll
+*.dylib
+
+# Ignorera CMake-cache och -output
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Ignorera bygghanterare-output (Make, Ninja, etc.)
+build/
+bin/
+lib/
+*.ninja
+.ninja_deps
+.ninja_log
+
+# Ignorera IDE-specifika filer
+# För VS Code
+.vscode/
+# För CLion
+.idea/
+cmake-build-debug/
+cmake-build-release/
+
+# Ignorera loggfiler och temporära filer
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.pid
+
+# Ignorera debugger-filer
+*.dSYM/
+*.ipch/
+*.pdb
+*.tlog
+
+# Ignorera valfritt systemfiler
+.DS_Store
+Thumbs.db

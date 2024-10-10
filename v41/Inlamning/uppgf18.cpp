@@ -41,7 +41,6 @@ int main() {
   } while (calcForYear < FIRST_YEAR);
 
   // Calcule how many years
-
   double salary = salaryCalc(calcForYear);
   cout << "In " << calcForYear << " you would have worked "
        << calcForYear - FIRST_YEAR + 1

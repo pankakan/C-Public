@@ -1,6 +1,5 @@
 #include <cstring>
 #include <iostream>
-
 using namespace std;
 
 // Method to find a substring in a string

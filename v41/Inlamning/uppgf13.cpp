@@ -1,11 +1,9 @@
 #include <iostream>
 #include <string>
-
-
 using namespace std;
 
 // Method to find a substring in a string
-// takes 2 constant references and return starting index of subtring t1 in string t2.
+// takes 2 constant references and returns starting index of subtring t1 in string t2.
 int findSubtringIn(const string& t1, const string& t2) {
   size_t found = t2.find(t1);
   if (found != string::npos) {

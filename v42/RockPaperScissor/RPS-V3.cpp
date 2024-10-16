@@ -152,26 +152,32 @@ void printMenu() {
   cout << "Enter your choice [1-3]: ";
 }
 
+// Function to get menu choice
+void menuChoice(int &choice) {
+  // Repeat until valid input to menuChoice
+  while (!(cin >> choice) || choice > 3 || choice < 0) {
+    cin.clear();
+    cin.ignore(10000, '\n');
+    cout << "\nInvalid input, try again!\n";
+    printMenu();
+  }
+}
+
 // Main function.
 int main() {
   // Generate a random seed for rand-function.
   srand(time(0));
-
-  int menuChoice;
+  int choice;
 
   do {
     // Print menu as long as user dont choose to exit
     printMenu();
 
-    // Repeat until valid input to menuChoice
-    while (!(cin >> menuChoice) || menuChoice > 3 || menuChoice < 0) {
-      cin.clear();
-      cin.ignore(10000, '\n');
-      cout << "\nInvalid input, try again!\n";
-      printMenu();
-    }
+    // Let the user decide from the menu
+    menuChoice(choice);
+
     // Menu-switch
-    switch (menuChoice) {
+    switch (choice) {
       case 1:
         game();
         break;
@@ -182,7 +188,7 @@ int main() {
         cout << "Exiting the game..\n";
         break;
     }
-  } while (menuChoice != 3);
+  } while (choice != 3);
   return 0;
 }
 

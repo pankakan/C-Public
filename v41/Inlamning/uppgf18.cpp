@@ -10,7 +10,7 @@ double salaryCalc(int calcForYear) {
   int years = calcForYear - FIRST_YEAR + 1;
   // First years payment.
   if (years == 1) {
-    return 150000.0;
+    return 15000.0;
   } else {
     // Recursive calculation that adds raise.
     return salaryCalc(calcForYear - 1) * 1.04 + 400;
@@ -18,7 +18,7 @@ double salaryCalc(int calcForYear) {
 }
 
 int main() {
-  // Ask user for year they would like to know salary for and keep asking until
+  // Ask user for year they would like to know salary for and keep asking until290
   // correct input.
   int calcForYear;
   do {
